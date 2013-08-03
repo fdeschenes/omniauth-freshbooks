@@ -1,5 +1,9 @@
 # OmniAuth FreshBooks
 
+[![Gem Version](https://badge.fury.io/rb/omniauth-freshbooks.png)](http://badge.fury.io/rb/omniauth-freshbooks)
+[![Build Status](https://travis-ci.org/fdeschenes/omniauth-freshbooks.png?branch=master)](https://travis-ci.org/fdeschenes/omniauth-freshbooks)
+[![Code Climate](https://codeclimate.com/github/fdeschenes/omniauth-freshbooks.png)](https://codeclimate.com/github/fdeschenes/omniauth-freshbooks)
+
 This is the OmniAuth strategy for authentication to [FreshBooks](http://www.freshbooks.com).
 
 ## Installation
