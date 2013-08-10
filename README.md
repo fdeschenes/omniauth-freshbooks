@@ -3,6 +3,8 @@
 [![Gem Version](https://badge.fury.io/rb/omniauth-freshbooks.png)](http://badge.fury.io/rb/omniauth-freshbooks)
 [![Build Status](https://travis-ci.org/fdeschenes/omniauth-freshbooks.png?branch=master)](https://travis-ci.org/fdeschenes/omniauth-freshbooks)
 [![Code Climate](https://codeclimate.com/github/fdeschenes/omniauth-freshbooks.png)](https://codeclimate.com/github/fdeschenes/omniauth-freshbooks)
+[![Dependency Status](https://gemnasium.com/fdeschenes/omniauth-freshbooks.png)](https://gemnasium.com/fdeschenes/omniauth-freshbooks)
+[![Coverage Status](https://coveralls.io/repos/fdeschenes/omniauth-freshbooks/badge.png?branch=master)](https://coveralls.io/r/fdeschenes/omniauth-freshbooks?branch=master)
 
 This is the OmniAuth strategy for authentication to [FreshBooks](http://www.freshbooks.com).
 
