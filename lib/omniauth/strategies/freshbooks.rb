@@ -11,9 +11,9 @@ module OmniAuth
         request_token_path: "/oauth/oauth_request.php",
         signature_method: "PLAINTEXT"
       }
-      
+
       uid { options.client_options.site + "/" + raw_info["staff_id"] }
-      
+
       info do
         {
           name: [raw_info["first_name"], raw_info["last_name"]].compact.join(" "),
@@ -28,21 +28,23 @@ module OmniAuth
           }
         }
       end
-      
+
       extra do
         { raw_info: raw_info }
       end
-      
+
       def redirect(*args)
+        session["oauth"] ||= {}
+        session["oauth"][name.to_s] ||= {}
         session["oauth"][name.to_s].merge!({
           "site" => options.client_options.site
         })
         super
       end
-      
+
       def request_phase
         options.client_options.site = options.site.presence || session["omniauth.params"]["site"].presence
-        
+
         unless options.client_options.site
           OmniAuth::Form.build(title: (options.title.presence || "FreshBooks Authentication")) do |form|
             form.text_field "URL", "site"
@@ -55,12 +57,12 @@ module OmniAuth
       rescue Net::HTTPRetriableError
         return fail!(:invalid_site)
       end
-      
+
       def callback_phase
         options.client_options.site = session["oauth"][name.to_s]["site"] if session["oauth"].present?
         super
       end
-      
+
       def raw_info
         @raw_info ||= MultiXml.parse(access_token.post("/api/2.1/xml-in", '<?xml version="1.0" encoding="utf-8"?><request method="staff.current"></request>').body).fetch("response").fetch("staff")
       end
